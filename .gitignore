@@ -1,0 +1,42 @@
+# 绝对不能上传的 Unity 缓存（这就是你之前 100MB 错误的原因）
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+SerializedBuildInfo/
+ClothProximity/
+
+# IDE 配置（个人喜好，不需要共享）
+.idea/
+.vs/
+.vscode/
+*.csproj
+*.sln
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# 大文件和构建产物
+*.apk
+*.aab
+*.exe
+*.app
+*.dll
+*.so
+*.dylib
+*.pdb
+*.mdb
+
+# 其他
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
