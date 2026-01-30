@@ -45,7 +45,7 @@ public class turstpoint : MonoBehaviour
         
         // 执行后重置
         pendingPenalty = 0;
-        hintText.text = "请选择惩罚值";
+        hintText.text = "请选择卡牌";
         UpdateVisuals();
     }
 
