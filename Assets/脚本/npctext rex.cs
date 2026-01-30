@@ -21,6 +21,7 @@ public class npctextrex : MonoBehaviour
     //private int player = 1;
     void Start()
     {
+        npctext.text = lines[0];
     }
     
     void Update()
