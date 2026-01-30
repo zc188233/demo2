@@ -18,5 +18,7 @@ public class Playacard : MonoBehaviour
     public void Playcard(int A)
     {
        player.playerstatus=A;
+       // 记录玩家选择
+       player.RecordChoice(A);
     }
 }

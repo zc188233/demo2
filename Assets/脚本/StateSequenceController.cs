@@ -24,8 +24,8 @@ public class StateSequenceController : MonoBehaviour
     public string fileName = "sequence.txt"; // 可选：从文件读取序列
     
     [Header("运行状态")]
-    private int currentIndex = 0;      // 当前在序列中的位置
-    private bool isSequenceFinished = false;
+    public int currentIndex = 0;      // 当前在序列中的位置
+    public bool isSequenceFinished = false;
     
     public enum State { 伪装 = 1, 刺探 = 2, 震慑 = 3, 共情 = 4 }
     public State currentState;
@@ -73,7 +73,7 @@ public class StateSequenceController : MonoBehaviour
     }
 
     // 应用序列中指定索引的状态
-    void ApplyStateByIndex(int index)
+    public void ApplyStateByIndex(int index)
     {
         if (numberSequence.Count == 0) return;
         
