@@ -3,59 +3,60 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class turstpoint : MonoBehaviour
+public class Turstpoint : MonoBehaviour
 {
-    public Text trustpoint;           // 信任值数值显示
-    public Text hintText;             // 提示文本（显示当前选中哪个）
-    
-    // 4个预备按钮的Image组件（用于高亮显示选中状态，可选）
-    public Image buttonA;
-    public Image buttonB;
-    public Image buttonC;
-    public Image buttonD;
-    public Color selectedColor = Color.yellow;  // 选中色
-    public Color normalColor = Color.white;     // 正常色
-    
-    private int pendingPenalty = 0;   // 当前待执行的惩罚值，0表示未选择
-
+    public static int turst = 0;
+    public static int san = 100;
+    public Text trustpoint;
+    public Text sanpoint;
     void Start()
     {
-        trustpoint.text = "100";
-        pendingPenalty = 0;
-        UpdateVisuals();
-    }
-
-    // 预备按钮A（-5）：Inspector中绑定 SelectPenalty(5)
-    // 预备按钮B（-10）：Inspector中绑定 SelectPenalty(10)
-    // 预备按钮C（-15）：Inspector中绑定 SelectPenalty(15)  
-    // 预备按钮D（-20）：Inspector中绑定 SelectPenalty(20)
-    public void SelectPenalty(int amount)
-    {
-        pendingPenalty = amount;
-        hintText.text = "已选择 -" + amount + "，请确认执行";
-        UpdateVisuals();
-    }
-
-    // 执行按钮绑定此方法
-    public void ConfirmExecute()
-    {
-        int current = int.Parse(trustpoint.text);
-        current -= pendingPenalty;
-        trustpoint.text = current.ToString();
         
-        // 执行后重置
-        pendingPenalty = 0;
-        hintText.text = "请选择卡牌";
-        UpdateVisuals();
     }
-
-    // 更新按钮高亮状态
-    void UpdateVisuals()
+    public void trustchange()
     {
-        // 根据当前选中值高亮对应按钮（假设5,10,15,20对应ABCD）
-        buttonA.color = (pendingPenalty == 5) ? selectedColor : normalColor;
-        buttonB.color = (pendingPenalty == 10) ? selectedColor : normalColor;
-        buttonC.color = (pendingPenalty == 15) ? selectedColor : normalColor;
-        buttonD.color = (pendingPenalty == 20) ? selectedColor : normalColor;
+        if(player.playerstatus == 1&&rex.rexstatus == 2)
+        {
+            turst += 15;
+            san  -= 0;
+        }
+        else if(player.playerstatus == 2&&rex.rexstatus == 2)
+        {
+            turst += 0;
+            san  -= 5;
+        }
+        else if(player.playerstatus == 3&&rex.rexstatus == 2)
+        {
+            turst += -10;
+            san -= 10;
+        }
+        else if(player.playerstatus == 4&&rex.rexstatus == 2)
+        {
+            turst += 5;
+            san -= 5;
+        } 
+        else if(player.playerstatus == 1&&rex.rexstatus == 1)
+        {
+            turst += -10;
+            san  -= 10;
+        }
+        else if(player.playerstatus == 2&&rex.rexstatus == 1)
+        {
+            turst += 15;
+            san  -= 0;
+        }
+        else if(player.playerstatus == 2&&rex.rexstatus == 1)
+        {
+            turst += 0;
+            san  -= 5;
+        }
+        else if(player.playerstatus == 2&&rex.rexstatus == 1)
+        {
+            turst += -30;
+            san  -= 20;
+        }
+
+        trustpoint.text = turst.ToString();
+        sanpoint.text = san.ToString();
     }
 }
