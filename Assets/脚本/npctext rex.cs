@@ -7,6 +7,7 @@ using TMPro;
 public class npctextrex : MonoBehaviour
 {
     public TMP_Text npctext;
+    public static int index = 0;
     
     public string[] lines = {
         "行行好…给点吃的吧。我已经三天…没看见罐头了。（请出牌）",
@@ -17,7 +18,6 @@ public class npctextrex : MonoBehaviour
         "雷克斯（撩起衣领，露出脖颈后的激光码）：“看，这是我的‘病历’。”“小心穿制服的人……他们还在‘回收’我们。”"
     };
     
-    private int index = 0;
     //private int player = 1;
     void Start()
     {
