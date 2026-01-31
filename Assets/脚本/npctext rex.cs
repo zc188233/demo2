@@ -36,7 +36,7 @@ public class npctextrex : MonoBehaviour
             {
                 npctext.text = lines[1];
                 index++;
-                rex.rexstatus = 1;
+                rex.rexstatus = 3;
             }
             else if(player.playerstatus == 4)
             {
@@ -47,15 +47,16 @@ public class npctextrex : MonoBehaviour
                 npctext.text = lines[2];
             }
         }
-        else if (index == 1)
+        else if (index == 1&&player.playerstatus == 4)
         {
             npctext.text = lines[4];
             index++;
-            rex.rexstatus = 0;
+            rex.rexstatus = 4;
         }
         else if (index == 2)
         {
             npctext.text = lines[5];
         }
+        player.playerstatus = 0;
     }
 }

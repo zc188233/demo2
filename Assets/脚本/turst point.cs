@@ -45,15 +45,55 @@ public class Turstpoint : MonoBehaviour
             turst += 15;
             san  -= 0;
         }
-        else if(player.playerstatus == 2&&rex.rexstatus == 1)
+        else if(player.playerstatus == 3&&rex.rexstatus == 1)
         {
             turst += 0;
             san  -= 5;
         }
-        else if(player.playerstatus == 2&&rex.rexstatus == 1)
+        else if(player.playerstatus == 4&&rex.rexstatus == 1)
         {
             turst += -30;
             san  -= 20;
+        }
+         else if(player.playerstatus == 1&&rex.rexstatus == 3)
+        {
+            turst += 0;
+            san  -= 10;
+        }
+        else if(player.playerstatus == 2&&rex.rexstatus == 3)
+        {
+            turst += -20;
+            san  -= 15;
+        }
+        else if(player.playerstatus == 3&&rex.rexstatus == 3)
+        {
+            turst += -25;
+            san  -= 20;
+        }
+        else if(player.playerstatus == 4&&rex.rexstatus == 3)
+        {
+            turst += 20;
+            san  -= 0;
+        }
+        else if(player.playerstatus == 1&&rex.rexstatus == 4)
+        {
+            turst += -30;
+            san  -= 20;
+        }
+        else if(player.playerstatus == 2&&rex.rexstatus == 4)
+        {
+            turst += 5;
+            san  -= 5;
+        }
+        else if(player.playerstatus == 3&&rex.rexstatus == 4)
+        {
+            turst += 10;
+            san  -= 0;
+        }
+        else if(player.playerstatus == 4&&rex.rexstatus == 4)
+        {
+            turst += 0;
+            san  -= 10;
         }
 
         trustpoint.text = turst.ToString();

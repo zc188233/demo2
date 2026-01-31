@@ -20,5 +20,6 @@ public class Playacard : MonoBehaviour
        player.playerstatus=A;
        // 记录玩家选择
        player.RecordChoice(A);
+       gameObject.SetActive(false);
     }
 }
