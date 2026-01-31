@@ -1,28 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:yousandi.cn,2023:
---- !u!1045 &1
-EditorBuildSettings:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: "Assets/Scenes/\u5267\u60C5\u4ECB\u7ECD.scene"
-    guid: 4ff93bcd03387ee4f8fd4c8f387febf0
-  - enabled: 1
-    path: "Assets/Scenes/\u4E3B\u9875\u9762.scene"
-    guid: 34629b775a3d03541a233cd2c918a595
-  - enabled: 1
-    path: "Assets/Scenes/\u724C\u684C.scene"
-    guid: ece54f66be29d724c94155880361960a
-  m_BuildProfiles: []
-  m_configObjects: {}
-  m_SlimFeaturesWeixinMiniGame:
-    ACLDecompression: 0
-    AllocateOverhead: 1
-    DecompressASTC: 0
-    DecompressDXT: 0
-    DecompressETC: 1
-    FreeTypeSfntPng: 1
-    LightProbe: 2
-    RootMotion: 0
-    UseStringInternPool: 2
+version https://git-lfs.github.com/spec/v1
+oid sha256:4826931fc15ae9491ab6fb9f790afef279ed6742efb58e49b89f4bc07a0c7ed8
+size 764
