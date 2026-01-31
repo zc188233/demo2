@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollText: {fileID: 1035679562}
-  scrollSpeed: 10
+  scrollSpeed: 50
   startDelay: 1.92
   endDelay: 1.97
 --- !u!114 &680150181
