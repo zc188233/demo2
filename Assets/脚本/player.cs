@@ -9,8 +9,7 @@ public class player : MonoBehaviour
     public enum GameScene
     {
         MainPage = 1,    // Scenes/主页面
-        MainMenu = 2,    // Scenes/MainMenu
-        CardTable = 3    // Scenes/牌桌
+        CardTable = 2    // Scenes/牌桌
     }
     
     public static int playerstatus = 0;
@@ -89,8 +88,6 @@ public class player : MonoBehaviour
         {
             case GameScene.MainPage:
                 return "Scenes/主页面";
-            case GameScene.MainMenu:
-                return "Scenes/MainMenu";
             case GameScene.CardTable:
                 return "Scenes/牌桌";
             default:

@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public GameObject menuList; //菜单列表
+    [SerializeField] private bool menuKeys = true;  
+    [SerializeField] private AudioSource bgmSource;   //背景音乐
     [Header("游戏内菜单")]
     public GameObject inGameMenuPanel;
     public Button backToMainButton;     // 回到主菜单
@@ -36,9 +39,29 @@ public class MenuManager : MonoBehaviour
     [Header("音频管理")]
     public AudioSource soundEffectSource;
     public AudioSource musicSource;
-    
+    void Update()
+    {
+        if(menuKeys)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                menuList.SetActive(true);
+                menuKeys = false;
+                Time.timeScale = 0; //暂停
+            if(bgmSource != null) bgmSource.Pause();//音乐暂停
+            }
+        } else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            menuList.SetActive(false);
+            menuKeys = true;
+            Time.timeScale = 1; //恢复正常
+            if(bgmSource != null) bgmSource.Play();//音乐播放
+        }
+    }
     void Start()
     {
+        menuList.SetActive(false);
+        
         // 初始化按钮事件
         InitializeButtons();
         
@@ -64,9 +87,7 @@ public class MenuManager : MonoBehaviour
     // 初始化所有按钮事件
     private void InitializeButtons()
     {
-        // 游戏内菜单按钮
-        if (backToMainButton != null)
-            backToMainButton.onClick.AddListener(BackToMainMenu);
+        // 游戏内菜单按钮 - 移除了回到主菜单按钮
         
         if (saveButton != null)
             saveButton.onClick.AddListener(ShowSaveMenu);
@@ -139,13 +160,7 @@ public class MenuManager : MonoBehaviour
         }
     }
     
-    // 回到主菜单
-    public void BackToMainMenu()
-    {
-        Debug.Log("Back to main menu");
-        // 使用场景跳跃函数 - 传入枚举类型
-        player.JumpToScene(player.GameScene.MainMenu);
-    }
+    
     
     // 加载并应用设置
     public void LoadSettings()
