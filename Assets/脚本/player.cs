@@ -9,7 +9,8 @@ public class player : MonoBehaviour
     public enum GameScene
     {
         MainPage = 1,    // Scenes/主页面
-        CardTable = 2    // Scenes/牌桌
+        CardTable = 2,    // Scenes/牌桌
+        startText = 3    // Scenes/剧情介绍
     }
     
     public static int playerstatus = 0;
@@ -90,6 +91,8 @@ public class player : MonoBehaviour
                 return "Scenes/主页面";
             case GameScene.CardTable:
                 return "Scenes/牌桌";
+            case GameScene.startText:
+                return "Scenes/剧情介绍";
             default:
                 Debug.LogWarning("Unexpected scene enum value: " + scene);
                 return string.Empty;
